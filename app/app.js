@@ -15,18 +15,18 @@ function mensajeDeBienvenida() {
 }
 mensajeDeBienvenida();
 
-//  Funcion de despedida.
-function despedida(){
+// Funcion de despedida.
+function despedida() {
     alert("¡Gracias por visitar nuestro Centro Odontológico! Esperamos verte pronto.")
 }
+
 
 // Usamos prompt para que el usuario utilice un numero de turno y luego se dirija al consultorio.
 const usuario = prompt(
     "Ingrese el número del turno para poder dirigirse al consultorio:"
 );
-
 if (numeroValido(usuario)) {
-    // Si el número de turno es válido, determinamos el consultorio correspondiente.
+    // Si el número de turno es válido, nos va a dirigir al consultorio que corresponda.
     if (usuario === "5") {
         alert(
             "¡Correcto! El consultorio al que debe dirigase es el 255 ubicado en el piso 3."
@@ -49,7 +49,8 @@ if (numeroValido(usuario)) {
         );
     }
     despedida()
-    } else {
-        alert("El número ingresado no es el deseado. Por favor, intente nuevamente.");
-    }
+} else {
+    alert("El número ingresado no es el deseado. Por favor, intente nuevamente.");
+}
+
 
