@@ -1,0 +1,246 @@
+/*ESTILOS RESET*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*ESTILOS GLOBALES*/
+body {
+    font-family: "Inconsolata", monospace;
+    background-size: cover;
+    font-family: 'Space Grotesk', Sans-Serif;
+    padding-top: 80px;
+
+
+}
+
+.bg_gral{
+    background-color: #282829;
+}
+
+h1 {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #b3b3b3;
+    text-align: center;
+    font-size: 36px;
+    margin: 30px 0px;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+/*UTILIZACION DE EXTEND*/
+
+
+h2 {
+
+    color: #a3a1a1;
+    padding-bottom: 30px;
+    padding-top: 40px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+
+
+p {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 25px;
+    padding: 5px;
+    color: #080303c9;
+    
+}
+
+
+/*ESTILOS HEADER*/
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    position: fixed;
+    height: 70px;
+    top: 8px;
+    width: 100%;
+}
+
+header img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+
+/*ESTILOS MAIN ALMUERZO*/
+
+.contenedor{
+    text-align: center;
+}
+
+
+.tienda .font_alm {
+    font-size: 49px;
+    border-radius: 10px 14px;
+}
+
+.tienda .wrap-title-section1 { 
+    text-align: center;
+    font-size: 25px;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: -20px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tienda .wrap_column-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 580px);
+    justify-items: center;
+    align-items: center;
+    /*MIXIN GRID ALMUERZO*/
+}
+
+.tienda .wrap_column-1 .animation .title-name {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    row-gap: 10px;
+    margin-top: 10px;
+}
+
+
+
+.tienda .wrap_column-1 .animation {
+    font-family: "PT Serif", serif;
+    font-weight: bold;
+    width: 270px;
+    height: 490px;
+    background-color: #413939;
+    text-align: center;
+    border-radius: 20px 20px 5px 5px;
+    overflow: hidden;
+    box-shadow: 13px 8px 27px 0px rgba(0, 0, 0, 0.75);
+}
+
+.tienda .wrap_column-1 .animation img {
+    width: 100%;
+    height: 310px;
+}
+
+.title-name .precio span{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.title-name button{
+    color: #656599;
+    background-color:#101011;
+    transition: background-color 0.3s ease;                   
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 17px;
+    border: none;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+button:hover{
+    background-color: #202020ec;
+}
+
+
+
+/*ESTILOS FOOTER*/
+.footer {
+    position: relative;
+    margin-top: 70px;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    background-color: rgba(1, 16, 34, 0.3294117647);
+    padding: 30px 0;
+}
+
+.footer .footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.footer .footer-container .footer-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+}
+
+.footer .footer-container .footer-row .social-links h4 {
+    margin-bottom: 10px;
+    color: #ffffff;
+    border-bottom: 2px solid #00C3FF;
+}
+
+.footer .footer-container .footer-row .social-links {
+    margin: 10px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.footer .footer-container .footer-row .social-links:hover {
+    color: #d1c8c8;
+    padding-left: 3px;
+}
+
+.footer .footer-container .footer-row .social-links .fab {
+    color: #fcfafa;
+    font-size: 26px;
+}
+
+.footer .footer-container .footer-row .social-links .social-links a {
+    margin: 0 5px;
+}
+
+.footer .footer-container .footer-row .logo2 img {
+    border-radius: 75px;
+    max-width: 100%;
+    position: fixed;
+    right: 15px;
+    bottom: 20px;
+    width: 55px;
+    height: 55px;
+}
+
+/*MEDIA QUERYS*/
+@media screen and (max-width: 1024px) {
+    .tienda .wrap_column-1 {
+        display: grid;
+        grid-template-columns: 2;
+        grid-template-rows: 2, 300px;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tienda .wrap_column-1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .tienda .font_alm {
+        font-size: 2.5rem;
+    }
+}
+
+
+
+
+
+/*# sourceMappingURL=main.css.map */

@@ -2,55 +2,47 @@
 //Creamos una funcion para verificar si el numero ingresado es mayor o igual a 1 y menor o igual a 5. 
 function numeroValido(numero) {
     const numTurno = parseInt(numero);
-    return !isNaN(numTurno) && numTurno >= 1 && numTurno <= 5;
+    return !isNaN(numTurno) && numTurno >= 1 && numTurno <= 10;
 }
 
 // Mostramos el mensaje de bienvenida
 function mensajeDeBienvenida() {
     alert(
-        "Bienvenido al Centro Odontológico. Te ayudaremos a encontrar tu consultorio."
+        "Bienvenido a nuestro local. ¡Vestite bien pegajoso!."
     );
-    alert("¡En nuestro centro, cuidamos tu sonrisa!");
-    alert("¡Si tu turno es del 1 al 5 escríbelo para saber tu consultorio!");
+    alert("¡Antes de visitar nuestra web, tenemos un juego para ti con un beneficio increible!");
+    alert("¡Llevate una prenda al 50% de descuento tan solo con adivinar un numero del 1 al 10!");
 }
 mensajeDeBienvenida();
 
 // Funcion de despedida.
 function despedida() {
-    alert("¡Gracias por visitar nuestro Centro Odontológico! Esperamos verte pronto.")
+    alert("¡Gracias por visitar nuestro pagina! Te esperamos pronto con mas beneficios.")
 }
 
+// Bucle para permitir al usuario intentar adivinar el número
+let intentos = 0;
+let numeroCorrecto = false;
 
-// Usamos prompt para que el usuario utilice un numero de turno y luego se dirija al consultorio.
-const usuario = prompt(
-    "Ingrese el número del turno para poder dirigirse al consultorio:"
-);
-if (numeroValido(usuario)) {
-    // Si el número de turno es válido, nos va a dirigir al consultorio que corresponda.
-    if (usuario === "5") {
-        alert(
-            "¡Correcto! El consultorio al que debe dirigase es el 255 ubicado en el piso 3."
-        );
-    } else if (usuario === "1") {
-        alert(
-            "¡Correcto! El consultorio al que debe dirigase es el 121 ubicado en el piso 2."
-        );
-    } else if (usuario === "2") {
-        alert(
-            "¡Correcto! El consultorio al que debe dirigase es el 10 ubicado en el piso 1."
-        );
-    } else if (usuario === "3") {
-        alert(
-            "¡Correcto! El consultorio al que debe dirigase es el 92 ubicado en el piso 1."
-        );
-    } else if (usuario === "4") {
-        alert(
-            "¡Correcto! El consultorio al que debe dirigase es el 50 ubicado en el piso 1."
-        );
+while (intentos < 3 && !numeroCorrecto) {
+    const usuario = prompt(`Ingrese un número del 1 al 10 para obtener un descuento especial: \n ¡¡Tienes 3 intentos, suerte!!`);
+
+    if (numeroValido(usuario)) {
+        // Si el número es válido, verificamos si es el número correcto.
+        if (usuario === "8") {
+            alert("¡Felicidades! Has adivinado correctamente. Has ganado un 50% de descuento en una prenda de tu elección.");
+            numeroCorrecto = true;
+        } else {
+            alert("El número ingresado no es el correcto. Por favor, intente nuevamente.");
+        }
+        intentos++;
+    } else {
+        alert("El número ingresado no es válido. Por favor, ingrese un número del 1 al 10.");
     }
-    despedida()
-} else {
-    alert("El número ingresado no es el deseado. Por favor, intente nuevamente.");
 }
 
+if (!numeroCorrecto) {
+    alert("Lo siento, has agotado todos tus intentos. Mejor suerte la próxima vez.");
+}
+despedida();
 
