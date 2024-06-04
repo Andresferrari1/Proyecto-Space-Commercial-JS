@@ -75,17 +75,12 @@ header img{
 }
 
 
-/*ESTILOS MAIN ALMUERZO*/
+/*ESTILOS MAIN */
 
 .contenedor{
     text-align: center;
 }
 
-
-.tienda .font_alm {
-    font-size: 49px;
-    border-radius: 10px 14px;
-}
 
 .tienda .wrap-title-section1 { 
     text-align: center;
