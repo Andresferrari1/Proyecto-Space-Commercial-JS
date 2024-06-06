@@ -74,7 +74,16 @@ header img{
     border-radius: 50px;
 }
 
-
+.scroll{
+    background-color: rgb(218, 218, 218);
+    box-shadow: .1rem .2rem .3rem #726363;
+}
+.scroll img{
+    filter: invert(30%);
+}
+.scroll h1{
+    color: #333336;
+}
 /*ESTILOS MAIN */
 
 .contenedor{
