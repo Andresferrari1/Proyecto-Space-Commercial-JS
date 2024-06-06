@@ -8,10 +8,10 @@ function numeroValido(numero) {
 // Mostramos el mensaje de bienvenida
 function mensajeDeBienvenida() {
     alert(
-        "Bienvenido a nuestro local. ¡Vestite bien pegajoso!."
+        "Bienvenido a nuestro espacio comercial."
     );
-    alert("¡Antes de visitar nuestra web, tenemos un juego para ti con un beneficio increible!");
-    alert("¡Llevate una prenda al 50% de descuento tan solo con adivinar un numero del 1 al 10!");
+    alert("¡Antes de visitar nuestra tienda, tenemos un juego para ti con un beneficio increible!");
+    alert("¡Llevate una producto al 20% de descuento tan solo con adivinar un numero del 1 al 10!");
 }
 mensajeDeBienvenida();
 
@@ -30,7 +30,7 @@ while (intentos < 3 && !numeroCorrecto) {
     if (numeroValido(usuario)) {
         // Si el número es válido, verificamos si es el número correcto.
         if (usuario === "8") {
-            alert("¡Felicidades! Has adivinado correctamente. Has ganado un 50% de descuento en una prenda de tu elección.");
+            alert("¡Felicidades! Has adivinado correctamente. Has ganado un 20% de descuento en nuestra tienda en un producto de tu elección.");
             numeroCorrecto = true;
         } else {
             alert("El número ingresado no es el correcto. Por favor, intente nuevamente.");
