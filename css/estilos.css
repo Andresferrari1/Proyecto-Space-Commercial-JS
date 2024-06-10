@@ -11,13 +11,10 @@ body {
     background-size: cover;
     font-family: 'Space Grotesk', Sans-Serif;
     padding-top: 80px;
-
-
-}
-
-.bg_gral{
     background-color: #282829;
+
 }
+
 
 h1 {
     display: flex;
@@ -74,6 +71,27 @@ header img{
     border-radius: 50px;
 }
 
+/* Estilos para los botones */
+input[type="number"], button {
+    padding: 10px 20px; 
+    margin: 5px; 
+    border-radius: 5px; 
+    background-color: #101011; 
+    color: #fff; 
+    font-size: 12px; 
+    cursor: pointer; 
+}
+
+/* Estilos para el botón de tipo number */
+input[type="number"] {
+    width: 200px; /* Ancho del campo de número */
+}
+
+/* Estilos para el botón de tipo button */
+button {
+    width: auto; /* Ancho automático */
+}
+
 .scroll{
     background-color: rgb(218, 218, 218);
     box-shadow: .1rem .2rem .3rem #726363;
@@ -110,14 +128,6 @@ header img{
     /*MIXIN GRID ALMUERZO*/
 }
 
-.tienda .wrap_column-1 .animation .title-name {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    row-gap: 10px;
-    margin-top: 10px;
-}
 
 
 
@@ -195,6 +205,8 @@ button:hover{
 .footer .footer-container .footer-row .social-links {
     margin: 10px;
     font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+    justify-content: space-between;
 }
 
 .footer .footer-container .footer-row .social-links:hover {
@@ -211,15 +223,7 @@ button:hover{
     margin: 0 5px;
 }
 
-.footer .footer-container .footer-row .logo2 img {
-    border-radius: 75px;
-    max-width: 100%;
-    position: fixed;
-    right: 15px;
-    bottom: 20px;
-    width: 55px;
-    height: 55px;
-}
+
 
 /*MEDIA QUERYS*/
 @media screen and (max-width: 1024px) {
@@ -242,9 +246,3 @@ button:hover{
         font-size: 2.5rem;
     }
 }
-
-
-
-
-
-/*# sourceMappingURL=main.css.map */

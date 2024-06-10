@@ -1,48 +1,52 @@
+// Seleccionamos los elementos del DOM
+const numeroInput = document.getElementById('numero');
+const enviarBtn = document.getElementById('enviar');
+const messageEl = document.getElementById('message');
 
-//Creamos una funcion para verificar si el numero ingresado es mayor o igual a 1 y menor o igual a 5. 
-function numeroValido(numero) {
-    const numTurno = parseInt(numero);
-    return !isNaN(numTurno) && numTurno >= 1 && numTurno <= 10;
-}
-
-// Mostramos el mensaje de bienvenida
-function mensajeDeBienvenida() {
-    alert(
-        "Bienvenido a nuestro espacio comercial."
-    );
-    alert("¡Antes de visitar nuestra tienda, tenemos un juego para ti con un beneficio increible!");
-    alert("¡Llevate una producto al 20% de descuento tan solo con adivinar un numero del 1 al 10!");
-}
-mensajeDeBienvenida();
-
-// Funcion de despedida.
-function despedida() {
-    alert("¡Gracias por visitar nuestro pagina! Te esperamos pronto con mas beneficios.")
-}
-
-// Bucle para permitir al usuario intentar adivinar el número
+// Variables del juego
 let intentos = 0;
-let numeroCorrecto = false;
+const maxIntentos = 3;
+const numeroCorrecto = 8;  // Número a adivinar
 
-while (intentos < 3 && !numeroCorrecto) {
-    const usuario = prompt(`Ingrese un número del 1 al 10 para obtener un descuento especial: \n ¡¡Tienes 3 intentos, suerte!!`);
+// Función para mostrar un mensaje al usuario y en la consola
+function mostrarMensaje(mensaje) {
+    messageEl.textContent = mensaje;
+    console.log(mensaje);
+}
 
-    if (numeroValido(usuario)) {
-        // Si el número es válido, verificamos si es el número correcto.
-        if (usuario === "8") {
-            alert("¡Felicidades! Has adivinado correctamente. Has ganado un 20% de descuento en nuestra tienda en un producto de tu elección.");
-            numeroCorrecto = true;
-        } else {
-            alert("El número ingresado no es el correcto. Por favor, intente nuevamente.");
-        }
-        intentos++;
+// Evento para el botón de enviar
+enviarBtn.addEventListener('click', () => {
+    const usuario = parseInt(numeroInput.value);
+    
+    if (isNaN(usuario) || usuario < 1 || usuario > 10) {
+        mostrarMensaje("Por favor, ingrese un número válido del 1 al 10.");
+        return;
+    }
+    
+    intentos++;
+    
+    if (usuario === numeroCorrecto) {
+        mostrarMensaje("¡Felicidades! Has adivinado correctamente. Has ganado un 20% de descuento en nuestra tienda en un producto de tu elección.");
+        enviarBtn.disabled = true;  // Deshabilitar el botón después de ganar
+    } else if (intentos < maxIntentos) {
+        mostrarMensaje(`El número ingresado no es el correcto. Te quedan ${maxIntentos - intentos} intentos.`);
     } else {
-        alert("El número ingresado no es válido. Por favor, ingrese un número del 1 al 10.");
+        mostrarMensaje("Lo siento, has agotado todos tus intentos. Mejor suerte la próxima vez.");
+        enviarBtn.disabled = true;  // Deshabilitar el botón después de agotar intentos
+    }
+
+    // Guardar el estado del juego en el almacenamiento local
+    localStorage.setItem('intentos', intentos);
+});
+
+// Mensaje de bienvenida inicial
+mostrarMensaje("Ingrese un número del 1 al 10 para obtener un descuento especial. ¡Tienes 3 intentos, suerte!");
+
+// Recuperar el estado del juego desde el almacenamiento local al cargar la página
+if (localStorage.getItem('intentos')) {
+    intentos = parseInt(localStorage.getItem('intentos'));
+    if (intentos >= maxIntentos) {
+        enviarBtn.disabled = true;
     }
 }
-
-if (!numeroCorrecto) {
-    alert("Lo siento, has agotado todos tus intentos. Mejor suerte la próxima vez.");
-}
-despedida();
 
