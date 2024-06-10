@@ -71,6 +71,11 @@ header img{
     border-radius: 50px;
 }
 
+#welcome-section{
+    text-align: center;
+    justify-content: center;
+
+}
 /* Estilos para los botones */
 input[type="number"], button {
     padding: 10px 20px; 
