@@ -43,10 +43,7 @@ enviarBtn.addEventListener('click', () => {
 mostrarMensaje("Ingrese un número del 1 al 10 para obtener un descuento especial. ¡Tienes 3 intentos, suerte!");
 
 // Recuperar el estado del juego desde el almacenamiento local al cargar la página
-if (localStorage.getItem('intentos')) {
-    intentos = parseInt(localStorage.getItem('intentos'));
-    if (intentos >= maxIntentos) {
-        enviarBtn.disabled = true;
-    }
+if (intentos >= maxIntentos) {
+    enviarBtn.disabled = true;
 }
 
