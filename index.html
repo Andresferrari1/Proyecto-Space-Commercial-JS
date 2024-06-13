@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- LINK FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&family=Inconsolata:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- LINK BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- JavaScript -->
+    <script defer src="./app/app2.js"></script>
+    <script defer src="./app/data.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <title>TIENDA | Inicio</title>
+</head>
+<body class="bg_gral">
+
+<header id="id_header">
+    <h1>Commercial Space</h1>
+    <img class="carrito" src="./imgs/carrito.jpg" alt="Carrito de compras">
+</header>
+<main class="tienda">
+    <!-- Contenedor para el mensaje de bienvenida y el juego de adivinanzas -->
+    <section id="welcome-section">
+        <h2>¡Juego de Adivinanza!</h2>
+        <p id="instructions">¡Llévate un producto al 20% de descuento tan solo con adivinar un número del 1 al 10!</p>
+        <div class="input-container">
+            <input type="number" id="numero" min="1" max="10" placeholder="Ingrese un número">
+            <button id="enviar">Enviar</button>
+        </div>
+        <p id="message"></p>
+    </section>
+    <section>
+        <div class="wrap-title-section1">
+            <h2>DESTACADOS</h2>
+        </div>
+
+
+        <!-- CONTENEDOR -->
+        <div class="wrap_column-1" id="id_contenedor">
+            <!-- Productos se añadirán aquí dinámicamente -->
+        </div>
+
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-row">
+            <div class="social-links">
+                <h4>Redes Sociales</h4>
+                <a href="https://api.whatsapp.com/send?phone=3532416670" target="_blank">
+                    <li class="fab fa-whatsapp"></li>
+                </a>
+                <a href="https://instagram.com/totooferrari_?igshid=MjEwN2IyYWYwYw==" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
