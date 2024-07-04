@@ -15,7 +15,6 @@ body {
 
 }
 
-
 h1 {
     display: flex;
     flex-wrap: wrap;
@@ -29,8 +28,6 @@ h1 {
 }
 
 /*UTILIZACION DE EXTEND*/
-
-
 h2 {
 
     color: #a3a1a1;
@@ -40,8 +37,6 @@ h2 {
     font-weight: bold;
     font-size: 35px;
 }
-
-
 
 p {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -53,6 +48,37 @@ p {
 
 
 /*ESTILOS HEADER*/
+.cart-count {
+    position: absolute;
+    top: 30px;
+    right: 410px;
+    background-color: rgb(179, 176, 176);
+    color: rgb(59, 57, 57);
+    border-radius: 50%;
+    padding: 5px 12px;
+}
+.carrito_compras{
+    color: #101011;
+}
+.cart-modal {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.411);
+    border: 1px solid #eceaea;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.cart-modal.active {
+    display: block;
+    color:#141212;
+    font-size: 18px;
+
+}
+
 
 header{
     display: flex;
@@ -89,14 +115,15 @@ input[type="number"], button {
 
 /* Estilos para el botón de tipo number */
 input[type="number"] {
-    width: 200px; /* Ancho del campo de número */
+    width: 200px; 
 }
 
 /* Estilos para el botón de tipo button */
 button {
-    width: auto; /* Ancho automático */
+    width: auto; 
 }
 
+/* Scroll de data.js  */
 .scroll{
     background-color: rgb(218, 218, 218);
     box-shadow: .1rem .2rem .3rem #726363;
@@ -107,12 +134,13 @@ button {
 .scroll h1{
     color: #333336;
 }
+
+
 /*ESTILOS MAIN */
 
 .contenedor{
     text-align: center;
 }
-
 
 .tienda .wrap-title-section1 { 
     text-align: center;
@@ -127,19 +155,16 @@ button {
 .tienda .wrap_column-1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 580px);
+    grid-template-rows: repeat(3, 580px);
     justify-items: center;
     align-items: center;
-    /*MIXIN GRID ALMUERZO*/
+    /*MIXIN GRID */
 }
-
-
-
 
 .tienda .wrap_column-1 .animation {
     font-family: "PT Serif", serif;
     font-weight: bold;
-    width: 270px;
+    width: 280px;
     height: 490px;
     background-color: #413939;
     text-align: center;
@@ -175,8 +200,6 @@ button:hover{
     background-color: #202020ec;
 }
 
-
-
 /*ESTILOS FOOTER*/
 .footer {
     position: relative;
@@ -203,8 +226,8 @@ button:hover{
 
 .footer .footer-container .footer-row .social-links h4 {
     margin-bottom: 10px;
-    color: #ffffff;
-    border-bottom: 2px solid #00C3FF;
+    color:  #7676c2;
+    border-bottom: 3px solid  #656599;
 }
 
 .footer .footer-container .footer-row .social-links {
@@ -216,11 +239,11 @@ button:hover{
 
 .footer .footer-container .footer-row .social-links:hover {
     color: #d1c8c8;
-    padding-left: 3px;
+    padding-left: 7px;
 }
 
 .footer .footer-container .footer-row .social-links .fab {
-    color: #fcfafa;
+    color: rgb(161, 163, 165);
     font-size: 26px;
 }
 
@@ -246,8 +269,25 @@ button:hover{
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-
     .tienda .font_alm {
         font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .cart-count {
+        top: 35px;
+        right: 150px;
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .cart-count {
+        top: 35px;
+        right: 5px;
+        padding: 5px 12px;
+        font-size: 12px;
     }
 }
