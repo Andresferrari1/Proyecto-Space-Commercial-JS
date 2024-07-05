@@ -1,0 +1,11 @@
+[
+    { "id": 1, "nombre": "Producto 1", "precio": 499.99, "imagen": "./imgs/mac1.jpg" },
+    { "id": 2, "nombre": "Producto 2", "precio": 529.99, "imagen": "./imgs/mac2.jpg" },
+    { "id": 3, "nombre": "Producto 3", "precio": 799.99, "imagen": "./imgs/iphone10.jpg" },
+    { "id": 4, "nombre": "Producto 4", "precio": 1899.99, "imagen": "./imgs/setup.jpg" },
+    { "id": 5, "nombre": "Producto 5", "precio": 399.99, "imagen": "./imgs/mac3.jpg" },
+    { "id": 6, "nombre": "Producto 6", "precio": 1199.99, "imagen": "./imgs/iphone13.jpg" },
+    { "id": 7, "nombre": "Producto 7", "precio": 69.9, "imagen": "./imgs/buzos.jpg" },
+    { "id": 8, "nombre": "Producto 8", "precio": 59.9, "imagen": "./imgs/buzo2.jpg" },
+    { "id": 9, "nombre": "Producto 9", "precio": 39.9, "imagen": "./imgs/buzo3.jpg" }
+]

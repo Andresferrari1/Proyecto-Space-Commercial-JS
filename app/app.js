@@ -11,14 +11,12 @@ const productos = [
     { id: 9, nombre: "Producto 9", precio: 39.9, imagen: "./imgs/buzo3.jpg" },
 ];
 
+
+
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-// Mostrar productos
-function mostrarProductos() {
-    const contenedor = document.getElementById('id_contenedor');
-    contenedor.innerHTML = ''; // Limpiar el contenedor antes de agregar los productos
-
-    productos.forEach(producto => {
+function recorrido (data){
+    data.forEach(producto => {
         const productoEl = document.createElement('div');
         productoEl.classList.add('contenedor');
         productoEl.innerHTML = `
@@ -34,6 +32,38 @@ function mostrarProductos() {
         contenedor.appendChild(productoEl);
     });
 }
+
+async function cargarMenu(){
+    try {
+        const resp = await fetch ("productos.json");
+        const data = await resp.json();
+        recorrido(data)
+    } catch (error){
+        console.error("Error al obtener los datos")
+    }
+}
+
+
+
+
+
+// // Mostrar productos
+// data.forEach(producto => {
+//     const productoEl = document.createElement('div');
+//     productoEl.classList.add('contenedor');
+//     productoEl.innerHTML = `
+//         <div class="animation">
+//             <img src="${producto.imagen}" alt="${producto.nombre}" />
+//             <div class="title-name">
+//                 <p>${producto.nombre}</p>
+//                 <p class="precio">€${producto.precio}<span></span></p>
+//                 <button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>
+//             </div>
+//         </div>
+//     `;
+//     contenedor.appendChild(productoEl);
+// });
+
 
 
 function agregarAlCarrito(id) {
@@ -131,6 +161,7 @@ if (intentos >= maxIntentos) {
     enviarBtn.disabled = true;
 }
 
+cargarMenu()
 
 
 // SCROLL COMMERCIAL SPACE 
