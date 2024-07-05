@@ -90,6 +90,7 @@ let intentos = 0;
 const maxIntentos = 3;
 const numeroCorrecto = 8;  // Número a adivinar
 
+
 // Función para mostrar un mensaje al usuario y en la consola
 function mostrarMensaje(mensaje) {
     messageEl.textContent = mensaje;

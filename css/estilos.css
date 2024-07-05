@@ -48,6 +48,13 @@ p {
 
 
 /*ESTILOS HEADER*/
+
+
+
+
+
+
+
 .cart-count {
     position: absolute;
     top: 30px;
@@ -279,15 +286,27 @@ button:hover{
         top: 35px;
         right: 150px;
         padding: 5px 12px;
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 660px) {
     .cart-count {
         top: 35px;
         right: 5px;
         padding: 5px 12px;
-        font-size: 12px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    #id_header .cart-modal{
+        position:absolute; 
+        top: 50px;
+        right: 50px;
+        width: 200px;
+        border: 1px solid #eceaea;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 4px;
     }
 }
