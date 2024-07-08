@@ -10,12 +10,3 @@ window.addEventListener("scroll",function(){
         header.classList.remove("scroll")
     }
 })
-
-// // Libreria sweetalert
-// Swal.fire({
-//     title: 'Error!',
-//     text: 'No puedes continuar',
-//     icon: 'warning',
-//     confirmButtonText: 'Aceptar',
-//     iconColor: "#000"
-// })

@@ -76,13 +76,12 @@ document.getElementById('carrito-icon').addEventListener('click', () => {
 document.getElementById(`comprar`).addEventListener(`click`,() => {
     Swal.fire({
     title: 'Muchas gracias!',
-    text: 'Tu compra a sido realizada con exito',
+    text: 'Tu compra a sido realizada con exito!',
     icon: 'success',
     confirmButtonText: 'Aceptar',
-    iconColor: "#080"
+    iconColor: "#080",
 })
 })
-
 
 
 // Inicializar la visualización del carrito al cargar la página
