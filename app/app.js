@@ -3,31 +3,16 @@
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-function recorrido (data){
-    data.forEach(producto => {
-        const productoEl = document.createElement('div');
-        productoEl.classList.add('contenedor');
-        productoEl.innerHTML = `
-            <div class="animation">
-                <img src="${producto.imagen}" alt="${producto.nombre}" />
-                <div class="title-name">
-                    <p>${producto.nombre}</p>
-                    <p class="precio">€${producto.precio}<span></span></p>
-                    <button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>
-                </div>
-            </div>
-        `;
-        contenedor.appendChild(productoEl);
-    });
-}
+
 
 async function cargarMenu(){
     try{
         const resp = await fetch(`productos.json`);
         const data = await resp.json()
+        productos = data;
         recorrido(data)
     } catch (error){
-        console.error(`Error al obtener los datos`)
+        console.error(`Error al obtener los datos`, error)
     }
 }
 
@@ -35,13 +20,37 @@ async function cargarMenu(){
     const contenedor = document.getElementById('id_contenedor');
     contenedor.innerHTML = ''; // Limpiar el contenedor antes de agregar los productos
 
+    function recorrido (data){
+        data.forEach(producto => {
+            const productoEl = document.createElement('div');
+            productoEl.classList.add('contenedor');
+            productoEl.innerHTML = `
+                <div class="animation">
+                    <img src="${producto.imagen}" alt="${producto.nombre}" />
+                    <div class="title-name">
+                        <p>${producto.nombre}</p>
+                        <p class="precio">€${producto.precio}<span></span></p>
+                        <button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>
+                    </div>
+                </div>
+            `;
+            contenedor.appendChild(productoEl);
+        });
+    }
+
+
 
 function agregarAlCarrito(id) {
     const producto = productos.find(p => p.id === id);
-    carrito.push(producto);
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    actualizarCarrito();
+    if (!carrito.some(item => item.id === id)) { // Evitar duplicados
+    if (  carrito.push(producto));
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        actualizarCarrito();
+    } else {
+        console.log('El producto ya está en el carrito');
+    }
 }
+
 
 function actualizarCarrito() {
     const carritoItems = document.getElementById('carrito-items');
@@ -83,10 +92,16 @@ document.getElementById(`comprar`).addEventListener(`click`,() => {
 })
 })
 
-
 // Inicializar la visualización del carrito al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    cargarMenu();
+    actualizarCarrito();
+});
 
-actualizarCarrito();
+
+actualizarCarrito()
+cargarMenu()
+
 
 
 // Seleccionamos los elementos del DOM
@@ -154,7 +169,4 @@ mostrarMensaje("Ingrese un número del 1 al 10 para obtener tu descuento. ¡Tien
 if (intentos >= maxIntentos) {
     enviarBtn.disabled = true;
 }
-
-
-
 
