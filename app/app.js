@@ -67,6 +67,8 @@ function actualizarCarrito() {
 
     totalPrecio.textContent = total.toFixed(2);
     cartCount.textContent = carrito.length;
+
+
     
     // Habilitar o deshabilitar el botón de compra
     if (carrito.length > 0) {
@@ -79,11 +81,25 @@ function actualizarCarrito() {
 
 
 document.getElementById('vaciar-carrito').addEventListener('click', () => {
+    Swal.fire({
+        title: "Estas seguro?",
+        icon: 'question',
+        iconColor: "#800",
+        confirmButtonText: "Aceptar",
+        text: 'Se encontraron productos en tu carrito',
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+        Swal.fire("Carrito vacio", "", "info");
+        } else if (result.isDenied) {
+        Swal.fire("Compra rechazada", "", "info");
+        }
+    });
+
     carrito = [];
     localStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarCarrito();
 });
-
 
 document.getElementById('carrito-icon').addEventListener('click', () => {
     const cartModal = document.getElementById('cart-modal');
@@ -93,12 +109,22 @@ document.getElementById('carrito-icon').addEventListener('click', () => {
 
 document.getElementById(`comprar`).addEventListener(`click`,() => {
     Swal.fire({
-    title: 'Muchas gracias!',
-    text: 'Tu compra a sido realizada con exito!',
-    icon: 'success',
-    confirmButtonText: 'Aceptar',
-    iconColor: "#080",
-})
+        title: "Estas seguro?",
+        icon: 'question',
+        iconColor: "#800",
+        showDenyButton: true,
+        confirmButtonText: "Aceptar",
+        text: '¡Aceptar para avanzar tu compra!',
+        denyButtonText: `Rechazar`,
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+        Swal.fire("Tu compra a sido realizada con exito", "", "success");
+        } else if (result.isDenied) {
+        Swal.fire("Compra rechazada", "", "info");
+        }
+    });
+
  // Limpiar el carrito después de la compra
     carrito = [];
     localStorage.setItem('carrito', JSON.stringify(carrito));
