@@ -47,12 +47,13 @@ function agregarAlCarrito(id) {
            // Notificación con Toastify, libreria
         Toastify({
             text: "Producto agregado al carrito",
+            stopOnFocus: true,
             duration: 3000,
             close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
-            backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
-            stopOnFocus: true, // Prevents dismissing of toast on hover
+            offset: {
+                x: 10, 
+                y: 90 
+            },
         }).showToast();
 
     } else {
@@ -96,7 +97,7 @@ document.getElementById('vaciar-carrito').addEventListener('click', () => {
         icon: 'question',
         iconColor: "#800",
         confirmButtonText: "Aceptar",
-        text: 'Se encontraron productos en tu carrito',
+        text: 'Aceptar para vaciar tu carrito',
     }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
@@ -109,6 +110,7 @@ document.getElementById('vaciar-carrito').addEventListener('click', () => {
     carrito = [];
     localStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarCarrito();
+    
 });
 
 // Modal del carrito

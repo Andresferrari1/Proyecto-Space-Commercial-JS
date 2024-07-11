@@ -157,7 +157,7 @@ button {
 .tienda .wrap_column-1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(8, 580px);
+    grid-template-rows: repeat(4, 580px);
     justify-items: center;
     align-items: center;
     /*MIXIN GRID */
