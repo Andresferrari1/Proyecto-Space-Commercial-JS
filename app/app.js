@@ -1,10 +1,9 @@
 
 
-
+// Carrito en almacenamiento local
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-
-
+// Cargamos los productos en un archivo JSON
 async function cargarMenu(){
     try{
         const resp = await fetch(`productos.json`);
@@ -38,20 +37,31 @@ async function cargarMenu(){
         });
     }
 
-
-
+// Agregamos los producto al carrito
 function agregarAlCarrito(id) {
     const producto = productos.find(p => p.id === id);
     if (!carrito.some(item => item.id === id)) { // Evitar duplicados
     if (  carrito.push(producto));
         localStorage.setItem('carrito', JSON.stringify(carrito));
         actualizarCarrito();
+           // Notificación con Toastify, libreria
+        Toastify({
+            text: "Producto agregado al carrito",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+        }).showToast();
+
     } else {
         console.log('El producto ya está en el carrito');
     }
 }
 
 
+// Actualizamos el carrito
 function actualizarCarrito() {
     const carritoItems = document.getElementById('carrito-items');
     const totalPrecio = document.getElementById('total-precio');
@@ -70,7 +80,7 @@ function actualizarCarrito() {
 
 
     
-    // Habilitar o deshabilitar el botón de compra
+    // Habilitar o deshabilitar el botón de compra dependiendo el contenido del carrito
     if (carrito.length > 0) {
         comprar.disabled = false;
     } else {
@@ -79,7 +89,7 @@ function actualizarCarrito() {
 }
 
 
-
+// Evento para vaciar el carrito
 document.getElementById('vaciar-carrito').addEventListener('click', () => {
     Swal.fire({
         title: "Estas seguro?",
@@ -101,17 +111,18 @@ document.getElementById('vaciar-carrito').addEventListener('click', () => {
     actualizarCarrito();
 });
 
+// Modal del carrito
 document.getElementById('carrito-icon').addEventListener('click', () => {
     const cartModal = document.getElementById('cart-modal');
     cartModal.classList.toggle('active');
 });
 
-
+// Evento para la compra
 document.getElementById(`comprar`).addEventListener(`click`,() => {
     Swal.fire({
         title: "Estas seguro?",
         icon: 'question',
-        iconColor: "#800",
+        iconColor: "#590",
         showDenyButton: true,
         confirmButtonText: "Aceptar",
         text: '¡Aceptar para avanzar tu compra!',
@@ -138,12 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-actualizarCarrito()
-cargarMenu()
-
-
-
-// Seleccionamos los elementos del DOM
+// Juego para el adivinanza
 const numeroInput = document.getElementById('numero');
 const enviarBtn = document.getElementById('enviar');
 const messageEl = document.getElementById('message');
@@ -152,8 +158,6 @@ const messageEl = document.getElementById('message');
 let intentos = 0;
 const maxIntentos = 3;
 const numeroCorrecto = 8;  // Número a adivinar
-
-
 
 // Función para mostrar un mensaje al usuario y en la consola
 function mostrarMensaje(mensaje) {
