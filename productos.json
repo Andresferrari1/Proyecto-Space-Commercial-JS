@@ -7,5 +7,12 @@
     { "id": 6, "nombre": "Producto 6", "precio": 1199.99, "imagen": "./imgs/iphone13.jpg" },
     { "id": 7, "nombre": "Producto 7", "precio": 69.9, "imagen": "./imgs/buzos.jpg" },
     { "id": 8, "nombre": "Producto 8", "precio": 59.9, "imagen": "./imgs/buzo2.jpg" },
-    { "id": 9, "nombre": "Producto 9", "precio": 39.9, "imagen": "./imgs/buzo3.jpg" }
+    { "id": 9, "nombre": "Producto 9", "precio": 39.9, "imagen": "./imgs/buzo3.jpg" },
+    { "id": 10, "nombre": "Producto 10", "precio": 39.9, "imagen": "./imgs/buzo3.jpg" },
+    { "id": 11, "nombre": "Producto 11", "precio": 39.9, "imagen": "./imgs/buzo3.jpg" },
+    { "id": 12, "nombre": "Producto 12", "precio": 39.9, "imagen": "./imgs/buzo3.jpg" },
+    { "id": 13, "nombre": "Producto 13", "precio": 39.9, "imagen": "./imgs/buzo3.jpg" },
+    { "id": 14, "nombre": "Producto 14", "precio": 39.9, "imagen": "./imgs/buzo3.jpg" },
+    { "id": 15, "nombre": "Producto 15", "precio": 39.9, "imagen": "./imgs/buzo3.jpg" },
+    { "id": 16, "nombre": "Producto 16", "precio": 39.9, "imagen": "./imgs/buzo3.jpg" }
 ]

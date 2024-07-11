@@ -50,11 +50,6 @@ p {
 /*ESTILOS HEADER*/
 
 
-
-
-
-
-
 .cart-count {
     position: absolute;
     top: 30px;
@@ -73,7 +68,7 @@ p {
     top: 50px;
     right: 50px;
     width: 300px;
-    background-color: rgba(255, 255, 255, 0.411);
+    background-color: rgb(109, 109, 109);
     border: 1px solid #eceaea;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -161,8 +156,8 @@ button {
 
 .tienda .wrap_column-1 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 580px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 580px);
     justify-items: center;
     align-items: center;
     /*MIXIN GRID */

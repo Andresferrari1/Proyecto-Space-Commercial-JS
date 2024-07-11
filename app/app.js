@@ -67,7 +67,15 @@ function actualizarCarrito() {
 
     totalPrecio.textContent = total.toFixed(2);
     cartCount.textContent = carrito.length;
+    
+    // Habilitar o deshabilitar el botón de compra
+    if (carrito.length > 0) {
+        comprar.disabled = false;
+    } else {
+        comprar.disabled = true;
+    }
 }
+
 
 
 document.getElementById('vaciar-carrito').addEventListener('click', () => {
@@ -82,6 +90,7 @@ document.getElementById('carrito-icon').addEventListener('click', () => {
     cartModal.classList.toggle('active');
 });
 
+
 document.getElementById(`comprar`).addEventListener(`click`,() => {
     Swal.fire({
     title: 'Muchas gracias!',
@@ -90,6 +99,10 @@ document.getElementById(`comprar`).addEventListener(`click`,() => {
     confirmButtonText: 'Aceptar',
     iconColor: "#080",
 })
+ // Limpiar el carrito después de la compra
+    carrito = [];
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarCarrito();
 })
 
 // Inicializar la visualización del carrito al cargar la página
