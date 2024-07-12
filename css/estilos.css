@@ -52,8 +52,8 @@ p {
 
 .cart-count {
     position: absolute;
-    top: 30px;
-    right: 380px;
+    top: 40px;
+    right: 310px;
     background-color: rgb(179, 176, 176);
     color: rgb(59, 57, 57);
     border-radius: 50%;
