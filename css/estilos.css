@@ -260,7 +260,7 @@ button:hover{
     .tienda .wrap_column-1 {
         display: grid;
         grid-template-columns: 2;
-        grid-template-rows: 2, 300px;
+        grid-template-rows: 2, 400px;
         gap: 1rem;
     }
 }
@@ -268,7 +268,8 @@ button:hover{
 @media screen and (max-width: 768px) {
     .tienda .wrap_column-1 {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 2;
+        grid-template-rows: 2, 400px;
         gap: 1rem;
     }
     .tienda .font_alm {
