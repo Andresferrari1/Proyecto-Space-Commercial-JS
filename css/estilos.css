@@ -15,6 +15,8 @@ body {
 
 }
 
+
+
 h1 {
     display: flex;
     flex-wrap: wrap;
@@ -52,8 +54,8 @@ p {
 
 .cart-count {
     position: absolute;
-    top: 40px;
-    right: 310px;
+    top: 30px;
+    right: 410px;
     background-color: rgb(179, 176, 176);
     color: rgb(59, 57, 57);
     border-radius: 50%;
@@ -102,7 +104,13 @@ header img{
 #welcome-section{
     text-align: center;
     justify-content: center;
-}
+
+    position: relative; /* Necesario para posicionar elementos dentro */
+    text-align: center; /* Centra horizontalmente el texto y los elementos */
+    color: white; /* Hace el texto visible sobre la imagen */
+    overflow: hidden; /* Asegura que no se desborde el contenido */
+    }
+
 
 /* Estilos para los botones */
 input[type="number"], button {
@@ -256,53 +264,50 @@ button:hover{
 
 
 /*MEDIA QUERYS*/
-@media screen and (max-width: 1024px) {
-    .tienda .wrap_column-1 {
-        display: grid;
-        grid-template-columns: 2;
-        grid-template-rows: 2, 400px;
-        gap: 1rem;
-    }
-}
 
-@media screen and (max-width: 768px) {
-    .tienda .wrap_column-1 {
-        display: grid;
-        grid-template-columns: 2;
-        grid-template-rows: 2, 400px;
-        gap: 1rem;
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px; /* Ajuste para el header */
     }
-    .tienda .font_alm {
-        font-size: 2.5rem;
-    }
-}
 
-@media only screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin: 20px 0;
+    }
+
+    .tienda .wrap_column-1 {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+
+    .tienda .wrap_column-1 .animation {
+        width: 90%; /* Ajustar ancho */
+        height: auto;
+    }
+
     .cart-count {
-        top: 35px;
-        right: 150px;
-        padding: 5px 12px;
+        right: 20px;
+        top: 10px;
+        padding: 4px 10px;
+    }
+
+    input[type="number"], button {
+        width: 100%; /* Botones y inputs al 100% */
         font-size: 16px;
     }
-}
 
-@media only screen and (max-width: 660px) {
-    .cart-count {
-        top: 35px;
-        right: 5px;
-        padding: 5px 12px;
-        font-size: 16px;
+    .footer .footer-container {
+        flex-direction: column;
+        text-align: center;
     }
-}
 
-@media only screen and (max-width: 1024px){
-    #id_header .cart-modal{
-        position:absolute; 
-        top: 50px;
-        right: 50px;
-        width: 200px;
-        border: 1px solid #eceaea;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 4px;
+    .footer .footer-container .footer-row {
+        width: 80%;
     }
 }
