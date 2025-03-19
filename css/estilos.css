@@ -264,10 +264,9 @@ button:hover{
 
 
 /*MEDIA QUERYS*/
-
 @media (max-width: 768px) {
     body {
-        padding-top: 60px; /* Ajuste para el header */
+        padding-top: 60px; /* Ajuste del padding superior */
     }
 
     header {
@@ -283,18 +282,18 @@ button:hover{
     }
 
     .tienda .wrap_column-1 {
-        grid-template-columns: 1fr; /* 1 columna */
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas max-width 768px */
+        gap: 10px; /* Separación entre las columnas */
     }
 
     .tienda .wrap_column-1 .animation {
-        width: 90%; /* Ajustar ancho */
-        height: auto;
+        width: 100%; /* Asegura que ocupe todo el espacio disponible */
+        height: auto; /* Ajuste la altura automáticamente */
     }
 
-    .cart-count {
-        right: 20px;
-        top: 10px;
-        padding: 4px 10px;
+    .tienda .wrap_column-1 .animation img {
+        height: 100%; /* Ajuste de la imagen */
+        object-fit: cover; /* Mantiene las proporciones */
     }
 
     input[type="number"], button {
@@ -308,6 +307,6 @@ button:hover{
     }
 
     .footer .footer-container .footer-row {
-        width: 80%;
+        width: 100%;
     }
 }
